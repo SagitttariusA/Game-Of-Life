@@ -466,7 +466,7 @@
             GOL.nextStep();
             document.getElementById('buttonRun').value = 'Stop';
           } else {
-            document.getElementById('buttonRun').value = 'Run';
+            document.getElementById('buttonRun').value = 'Exécuter';
           }
         },
 
@@ -488,7 +488,7 @@
           if (GOL.running) {
             GOL.clear.schedule = true;
             GOL.running = false;
-            document.getElementById('buttonRun').value = 'Run';
+            document.getElementById('buttonRun').value = 'Exécuter';
           } else {
             GOL.cleanUp();
           }
@@ -499,7 +499,7 @@
          * Button Handler - Remove/Add Trail
          */
         trail : function() {
-          GOL.element.messages.layout.innerHTML = GOL.trail.current ? 'Trail is Off' : 'Trail is On';
+          GOL.element.messages.layout.innerHTML = GOL.trail.current ? 'Marquage désactivé' : 'Marquage activé';
           GOL.trail.current = !GOL.trail.current;
           if (GOL.running) {
             GOL.trail.schedule = true;
@@ -514,7 +514,7 @@
          */
         colors : function() {
           GOL.colors.current = (GOL.colors.current + 1) % GOL.colors.schemes.length;
-          GOL.element.messages.layout.innerHTML = 'Color Scheme #' + (GOL.colors.current + 1);
+          GOL.element.messages.layout.innerHTML = 'Couleur #' + (GOL.colors.current + 1);
           if (GOL.running) {
             GOL.colors.schedule = true; // Delay redraw
           } else {
@@ -528,7 +528,7 @@
          */
         grid : function() {
           GOL.grid.current = (GOL.grid.current + 1) % GOL.grid.schemes.length;
-          GOL.element.messages.layout.innerHTML = 'Grid Scheme #' + (GOL.grid.current + 1);
+          GOL.element.messages.layout.innerHTML = 'Grille #' + (GOL.grid.current + 1);
           if (GOL.running) {
             GOL.grid.schedule = true; // Delay redraw
           } else {
